@@ -3,16 +3,28 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { HeroesComponent } from './heroes/heroes.component';
+import { MessageService } from './message.service';
+import {FormsModule} from '@angular/forms';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { MessagesComponent } from './messages/messages.component';
+import{HeroService} from './heroes/hero.service';
 
+//lets check latest commit
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeroesComponent,
+    HeroDetailComponent,
+    MessagesComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+   // AppRoutingModule
   ],
-  providers: [],
+  providers: [HeroService, MessageService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
